@@ -115,7 +115,13 @@ ollama pull llama3.2
 
 You are all set !!
 
-4. Run the project
+4. Install requirements.txt
+
+open terminal and run - 
+
+pip install -r requirements.txt
+
+5. Run the project
 
 open the project directory in your terminal and run - 
 
