@@ -12,7 +12,7 @@ def prompt(file_name, user_query):
         db = pd.read_parquet(f"parquet_files/{file_name}.parquet")
     except :
         db = pd.read_parquet(f"saved_parquets/{file_name}.parquet")
-    response = cosine_similarity(np.vstack(db["embedding"]), embed_factory(user_query)).flatten().argsort()[::-1][:3]
+    response = cosine_similarity(np.vstack(db["embedding"]), embed_factory(user_query)).flatten().argsort()[::-1][:3] #type: ignore
        
     df = db.loc[response]
 
@@ -20,7 +20,7 @@ def prompt(file_name, user_query):
     {df[["Video_title", "Start", "End", "Text"]].to_json(orient="records")}
     ---------------------------------
     "{user_query}"
-    User asked this question related to the video chunks, you have to answer in a human way (dont mention the above format, its just for you) where and how much content is taught in which video (in which video and at what timestamp) and guide the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the chunks.
+    User asked this question related to the video chunks, you have to answer in a human way (dont mention the above format, its just for you). At the end, guide the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the chunks.
     '''
     return prompt
 

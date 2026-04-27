@@ -3,3 +3,5 @@ numpy
 scikit-learn
 requests
 openai-whisper
+imageio_ffmpeg
+pyarrow

@@ -1,6 +1,7 @@
 import subprocess
 import os
 import shutil
+import imageio_ffmpeg as ffmpeg
 
 def file_manager(user_path):
     file_name = user_path.split("\\")[-1]
@@ -12,7 +13,8 @@ def file_manager(user_path):
             shutil.copy(os.path.join(user_path, file), os.path.join("Video", file))
         
 def processor(input_file, output_file):
-    subprocess.run(
-        ["ffmpeg", "-i", os.path.join("Video", input_file), os.path.join("Audio", f"{output_file}.mp3")],
-        check=True
-    )
+    exe = ffmpeg.get_ffmpeg_exe()
+    subprocess.run([
+    exe, "-i", os.path.join("Video", input_file),
+    "-vn", "-acodec", "mp3", os.path.join("Audio", f"{output_file}.mp3")
+    ])
