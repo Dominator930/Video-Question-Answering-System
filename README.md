@@ -37,15 +37,21 @@ and answers are generated using the LLaMA 3.2 language model.
 
 -----------------------------------------------------------------------------------------------------------------
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-Step 1. Clone the repository
+## Step 1. Install ffmpeg
 
-git clone <url>
+Use LLM models to walk you through the ffmpeg download process 
 
 -----------------------------------------------------------------------------------------------------------------
 
-Step 2. Install llama3.2 with ollama
+## Step 2. Clone the repository
+
+git clone url
+
+-----------------------------------------------------------------------------------------------------------------
+
+## Step 3. Install llama3.2 with ollama
 
 Visit https://ollama.com/
 
@@ -57,7 +63,7 @@ ollama pull llama3.2
 
 -----------------------------------------------------------------------------------------------------------------
 
-Step 3. Install requirements.txt
+## Step 4. Install requirements.txt
 
 open terminal and run - 
 
@@ -65,13 +71,13 @@ pip install -r requirements.txt
 
 -----------------------------------------------------------------------------------------------------------------
 
-Step 4. Run the project
+## Step 5. Run the project
 
 open the project directory in your terminal and run - 
 
 python main.py
 
-or use any code editor you like and run the main.py file.
+or use any code editor of your choice and run the main.py file.
 
 -----------------------------------------------------------------------------------------------------------------
 
