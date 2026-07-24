@@ -1,7 +1,7 @@
 import json
 
-def round_10(x : int):
-    return x + (11 - x % 10)
+def round_10(x):
+        return x + (11 - x % 10)
 
 def manage_chunk(file):
     with open(f"Transcripted_json/{file}", "r") as f:
@@ -15,12 +15,12 @@ def manage_chunk(file):
             except :
                 s += ""
         try : 
-            lst.append({'Start' : data["chunks"][j-9]["Start"],
-    'End' : data["chunks"][j]["End"],
+            lst.append({'Start' : data["chunks"][j-9]["Start"],  #type: ignore
+    'End' : data["chunks"][j]["End"],   #type: ignore
     'Video_title' : data["chunks"][10]["Video_title"],
     'Text' : s})      
         except :
-            lst.append({'Start' : data["chunks"][j-9]["Start"],
+            lst.append({'Start' : data["chunks"][j-9]["Start"],  #type: ignore
     'End' : data["chunks"][len(data["chunks"])-1]["End"],
     'Video_title' : data["chunks"][0]["Video_title"],
     'Text' : s})
